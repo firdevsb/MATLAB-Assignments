@@ -40,10 +40,10 @@ $$A = \begin{bmatrix} 10 & -2 & 1 & 3 \\ -3 & 8 & -1 & 2 \\ 1 & -2 & 9 & -1 \\ 2
 The methods are compared using Euclidean $L_2$ norm metrics:
 
 * **Relative Error (`err_rel`):**
-  $$\text{err\_rel} = \frac{\|x_{\text{Jacobi}} - x_{\text{Gaussian}}\|_2}{\|x_{\text{Gaussian}}\|_2}$$
+  $$\text{err\rel} = \frac{\|x{\text{Jacobi}} - x{\text{Gaussian}}\|2}{\|x{\text{Gaussian}}\|2}$$
 
 * **Residual Error (`err_res`):**
-  $$\text{err\_res} = \|A x_{\text{Jacobi}} - b\|_2$$
+  $$\text{err\res} = \|A x{\text{Jacobi}} - b\|2$$
 
 ---
 
