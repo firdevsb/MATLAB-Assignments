@@ -45,7 +45,6 @@ The methods are compared using Euclidean $L_2$ norm metrics:
 * **Residual Error (`err_res`):**
   $$\text{err\_res} = \|A x_{\text{Jacobi}} - b\|_2$$
 
-
 ---
 
 ## 📊 Expected Output Variables
