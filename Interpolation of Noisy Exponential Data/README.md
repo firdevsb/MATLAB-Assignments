@@ -46,9 +46,24 @@ The noisy data samples are generated from $f(x) = e^x + \text{noise}$:
   3. Method robustness when dealing with noise and extrapolation.
 
 
-## 📊 Summary of Results
+## 📊 Results & Discussion
 
-| Target Point ($x$) | True Value ($e^x$) | Lagrange Interp. | Newton Interp. | Least-Squares Fit |
-| :---: | :---: | :---: | :---: | :---: |
-| **1.2** | `3.3201` | *Result* | *Result* | *Result* |
-| **1.8** | `6.0496` | *Result* | *Result* | *Result* |
+### Numerical Comparison
+
+| Target Point ($x$) | True Value ($e^x$) | Method | Estimate | Absolute Error |
+| :---: | :---: | :--- | :---: | :---: |
+| **1.2** | `3.3201` | **Lagrange Interp.** | `3.3076` | `0.0125` |
+| | | **Newton Interp.** | `3.3076` | `0.0125` |
+| | | **Curve Fit (Least-Squares)** | `3.3040` | `0.0161` |
+| **1.8** | `6.0496` | **Lagrange Interp.** | `5.9214` | `0.1282` |
+| | | **Newton Interp.** | `5.9214` | `0.1282` |
+| | | **Curve Fit (Least-Squares)** | `5.9356` | `0.1141` |
+
+---
+
+### Key Observations & Discussion
+
+* **Method Equivalence:** Both Lagrange and Newton interpolations yield **identical** estimates (`3.3076` at $x=1.2$ and `5.9214` at $x=1.8$), as expected since both construct the unique polynomial passing through the sample points.
+* **Behavior Near & Between Data Points:**
+  * **Interpolation Methods (Lagrange & Newton):** Pass through all given noisy data points exactly. Because they strictly fit noise, they are more sensitive to fluctuations and tend to oscillate between points (especially noticeable at $x=1.8$ with a higher absolute error of `0.1282`).
+  * **Exponential Fit (Least-Squares):** Does not force the curve through every noisy point; instead, it smooths out the noise and captures the underlying exponential trend effectively (yielding a lower error of `0.1141` at $x=1.8$).
